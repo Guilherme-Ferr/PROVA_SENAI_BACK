@@ -12,7 +12,7 @@ export function tokenMiddleware(
 
   try {
     const [, token] = authToken.split(" ");
-    verify(token, "SENAI_PRIVATE_KEY");
+    verify(token, "SENAI_TOKEN_KEY");
     next();
   } catch (error) {
     return response.status(401).json({ error: "Token invalido" });
